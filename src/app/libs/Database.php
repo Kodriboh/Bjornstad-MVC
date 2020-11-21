@@ -10,24 +10,26 @@
 class Database 
 {
     private $host = DB_HOST;
-    private $user = DB_USER;
-    private $pwd = DB_PWD;
+    private $port = DB_PORT;
     private $dbname = DB_NAME;
-
+    private $user = DB_ROOT_USER;
+    private $pwd = DB_ROOT_PWD;
+    
     private $dbh;
     private $stmt; 
     private $err; 
 
     public function __construct()
     {
-        $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
+        $dsn = 'mysql:host=' . $this->host . ';port=' . $this->port . ';dbname=' . $this->dbname;
         $options = array(
             PDO::ATTR_PERSISTENT => true, // Persistent connection - increase performance
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         );
 
         try {
-            $this->dbh = new PDO($dsn, $this->user, $this->pwd, $options);
+            $this->dbh = new PDO('mysql:host=mysql;port=3306;dbname=app_db', $this->user, $this->pwd, $options);
+            // $this->dbh = new PDO($dsn, $this->user, $this->pwd, $options);
         } catch(PDOException $e) {
             $this->err = $e->getMessage();
             echo $this->err;
