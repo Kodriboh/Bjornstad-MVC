@@ -28,8 +28,7 @@ class Database
         );
 
         try {
-            $this->dbh = new PDO('mysql:host=mysql;port=3306;dbname=app_db', $this->user, $this->pwd, $options);
-            // $this->dbh = new PDO($dsn, $this->user, $this->pwd, $options);
+            $this->dbh = new PDO($dsn, $this->user, $this->pwd, $options);
         } catch(PDOException $e) {
             $this->err = $e->getMessage();
             echo $this->err;

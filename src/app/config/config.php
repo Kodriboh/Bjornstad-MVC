@@ -1,23 +1,21 @@
 <?php 
-// DotEnv must be required and enabled to use environment variables
-
 // DB Params
-define('DB_HOST', 'mysql');
-define('DB_PORT', '3306');
+define('DB_HOST', $_ENV['DB_HOST']);
+define('DB_PORT', $_ENV['DB_PORT']);
 
-define('DB_NAME', 'app_db');
-define('DB_ROOT_USER', 'root');
-define('DB_ROOT_PWD', 'root');
+define('DB_NAME', $_ENV['DB_NAME']);
+define('DB_ROOT_USER', $_ENV['DB_ROOT_USER']);
+define('DB_ROOT_PWD', $_ENV['DB_ROOT_PWD']);
 
-define('DB_USER', 'lmccann');
-define('DB_PWD', '1234');
+define('DB_USER', $_ENV['DB_USER']);
+define('DB_PWD', $_ENV['DB_PWD']);
 
 
 // App Root
 define('APPROOT', dirname(dirname(__FILE__)));
 
 // URL Root
-define('URLROOT', 'http://localhost:8080');
+define('URLROOT', $_ENV['URLROOT']);
 
 // Site Name
-define('SITENAME', 'Bjornstad');
+define('SITENAME', $_ENV['APPNAME']);
