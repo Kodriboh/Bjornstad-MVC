@@ -1,4 +1,9 @@
 <?php 
+/**
+ * Post
+ * 
+ * Example for building models using Bjornstad-MVC
+ */
 class Post 
 {
     private $db;
