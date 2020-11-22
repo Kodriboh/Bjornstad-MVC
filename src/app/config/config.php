@@ -10,7 +10,6 @@ define('DB_ROOT_PWD', $_ENV['DB_ROOT_PWD']);
 define('DB_USER', $_ENV['DB_USER']);
 define('DB_PWD', $_ENV['DB_PWD']);
 
-
 // App Root
 define('APPROOT', dirname(dirname(__FILE__)));
 
